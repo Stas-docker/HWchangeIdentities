@@ -10,7 +10,7 @@ public class Steps {
         Menu.beginning();
 
         while (choice != OptionToContinue.EXIT) {
-            Menu.optionToContinue();
+            Menu.printContinueOption();
             int selection = readContinueOption(scanner);
             choice = getContinueOption(selection);
             selectContinueOption(choice, scanner);
@@ -19,12 +19,12 @@ public class Steps {
 
     private static void changePeople(final Scanner scanner) {
 
-        Menu.getMenuPerson1();
+        Menu.printMenuPerson1();
         final Person p1 = PersonUtils.createPerson(scanner);
-        Menu.getMenuPerson2();
+        Menu.printMenuPerson2();
         final Person p2 = PersonUtils.createPerson(scanner);
 
-        PersonUtils.ChangeIdentities(p1, p2);
+        PersonUtils.сhangeIdentities(p1, p2);
     }
 
     private static int readContinueOption(final Scanner scanner) {
