@@ -10,10 +10,10 @@ public class Steps {
      */
     public static void startGame() {
 
-        try (final Scanner scanner = new Scanner(System.in);) {
+        try (final Scanner scanner = new Scanner(System.in)) {
 
             OptionToContinue choice = OptionToContinue.UNKNOWN;
-            Menu.beginning();
+            Menu.printBeginning();
 
             while (choice != OptionToContinue.EXIT) {
                 Menu.printContinueOption();
@@ -37,7 +37,7 @@ public class Steps {
         Menu.printMenuPerson2();
         final Person p2 = PersonUtils.createPerson(scanner);
 
-        PersonUtils.сhangeIdentities(p1, p2);
+        PersonUtils.changeIdentities(p1, p2);
     }
 
     /**

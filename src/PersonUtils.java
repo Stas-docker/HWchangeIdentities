@@ -11,7 +11,7 @@ public class PersonUtils {
      * @param p1 the first person
      * @param p2 the second person
      */
-    public static void сhangeIdentities(final Person p1, final Person p2) {
+    public static void changeIdentities(final Person p1, final Person p2) {
 
         final String name1 = p2.getName();
         final int age1 = p2.getAge();

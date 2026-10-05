@@ -6,7 +6,7 @@ public class Menu {
     /**
      * Prints the welcome message at the start of the game.
      */
-    public static void beginning() {
+    public static void printBeginning() {
         System.out.println("Hello! Let's change identities of two people\n");
     }
 
