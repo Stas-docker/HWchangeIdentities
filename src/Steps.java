@@ -1,7 +1,13 @@
 import java.util.Scanner;
 
+/**
+ * Controls the game flow, executing the primary application loop and step-by-step user choices.
+ */
 public class Steps {
 
+    /**
+     * Starts and manages the main game loop until the user chooses to exit.
+     */
     public static void startGame() {
 
         final Scanner scanner = new Scanner(System.in);
@@ -17,6 +23,11 @@ public class Steps {
         }
     }
 
+    /**
+     * Prompts input for two people, creates them, and swaps their identities.
+     *
+     * @param scanner the Scanner object for user input
+     */
     private static void changePeople(final Scanner scanner) {
 
         Menu.printMenuPerson1();
@@ -27,6 +38,12 @@ public class Steps {
         PersonUtils.сhangeIdentities(p1, p2);
     }
 
+    /**
+     * Reads the menu option selected by the user with input validation.
+     *
+     * @param scanner the Scanner object for user input
+     * @return the selected option number
+     */
     private static int readContinueOption(final Scanner scanner) {
 
         PersonUtils.validateIntInput(scanner);
@@ -36,6 +53,12 @@ public class Steps {
         return choice;
     }
 
+    /**
+     * Maps an integer option to its corresponding OptionToContinue enum value.
+     *
+     * @param choice the integer choice entered by the user
+     * @return the corresponding OptionToContinue enum constant
+     */
     private static OptionToContinue getContinueOption(final int choice) {
 
         return switch (choice) {
@@ -45,6 +68,12 @@ public class Steps {
         };
     }
 
+    /**
+     * Executes the appropriate action based on the selected enum option.
+     *
+     * @param choice  the chosen OptionToContinue state
+     * @param scanner the Scanner object for taking further input
+     */
     private static void selectContinueOption(final OptionToContinue choice, final Scanner scanner) {
 
         switch (choice) {
