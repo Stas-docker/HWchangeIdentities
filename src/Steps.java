@@ -10,17 +10,19 @@ public class Steps {
      */
     public static void startGame() {
 
-        final Scanner scanner = new Scanner(System.in);
+        try (final Scanner scanner = new Scanner(System.in);) {
 
-        OptionToContinue choice = OptionToContinue.UNKNOWN;
-        Menu.beginning();
+            OptionToContinue choice = OptionToContinue.UNKNOWN;
+            Menu.beginning();
 
-        while (choice != OptionToContinue.EXIT) {
-            Menu.printContinueOption();
-            int selection = readContinueOption(scanner);
-            choice = getContinueOption(selection);
-            selectContinueOption(choice, scanner);
+            while (choice != OptionToContinue.EXIT) {
+                Menu.printContinueOption();
+                int selection = readContinueOption(scanner);
+                choice = getContinueOption(selection);
+                selectContinueOption(choice, scanner);
+            }
         }
+
     }
 
     /**
