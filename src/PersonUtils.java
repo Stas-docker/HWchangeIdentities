@@ -12,7 +12,6 @@ public class PersonUtils {
      * @param p2 the second person
      */
     public static void changeIdentities(final Person p1, final Person p2) {
-
         final String name1 = p2.getName();
         final int age1 = p2.getAge();
         final String name2 = p1.getName();
@@ -23,8 +22,8 @@ public class PersonUtils {
         p2.setName(name2);
         p2.setAge(age2);
 
-        System.out.println("\nNow the first person is: " + p1.name + ", " + p1.age);
-        System.out.println("The second person is: " + p2.name + ", " + p2.age + "\n");
+        System.out.println("\nNow the first person is: " + p1.getName() + ", " + p1.getAge());
+        System.out.println("The second person is: " + p2.getName() + ", " + p2.getAge() + "\n");
     }
 
 
@@ -48,7 +47,6 @@ public class PersonUtils {
      * @return the validated age integer
      */
     public static int readAge(final Scanner scanner) {
-
         validateIntInput(scanner);
         final int age = scanner.nextInt();
         scanner.nextLine();
@@ -63,7 +61,6 @@ public class PersonUtils {
      * @param scanner the Scanner object to check input
      */
     public static void validateIntInput(final Scanner scanner) {
-
         while (!scanner.hasNextInt()) {
 
             if (scanner.hasNextBigInteger()) {
@@ -83,7 +80,6 @@ public class PersonUtils {
      * @return a new Person instance
      */
     public static Person createPerson(final Scanner scanner) {
-
         final Person person = new Person(readName(scanner), readAge(scanner));
 
         return person;

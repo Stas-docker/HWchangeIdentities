@@ -9,7 +9,6 @@ public class Steps {
      * Starts and manages the main game loop until the user chooses to exit.
      */
     public static void startGame() {
-
         try (final Scanner scanner = new Scanner(System.in)) {
 
             OptionToContinue choice = OptionToContinue.UNKNOWN;
@@ -17,7 +16,7 @@ public class Steps {
 
             while (choice != OptionToContinue.EXIT) {
                 Menu.printContinueOption();
-                int selection = readContinueOption(scanner);
+                final int selection = readContinueOption(scanner);
                 choice = getContinueOption(selection);
                 selectContinueOption(choice, scanner);
             }
@@ -31,7 +30,6 @@ public class Steps {
      * @param scanner the Scanner object for user input
      */
     private static void changePeople(final Scanner scanner) {
-
         Menu.printMenuPerson1();
         final Person p1 = PersonUtils.createPerson(scanner);
         Menu.printMenuPerson2();
@@ -47,9 +45,8 @@ public class Steps {
      * @return the selected option number
      */
     private static int readContinueOption(final Scanner scanner) {
-
         PersonUtils.validateIntInput(scanner);
-        int choice = scanner.nextInt();
+        final int choice = scanner.nextInt();
         scanner.nextLine();
 
         return choice;
@@ -62,7 +59,6 @@ public class Steps {
      * @return the corresponding OptionToContinue enum constant
      */
     private static OptionToContinue getContinueOption(final int choice) {
-
         return switch (choice) {
             case 1 -> OptionToContinue.CONTINUE;
             case 2 -> OptionToContinue.EXIT;
@@ -77,7 +73,6 @@ public class Steps {
      * @param scanner the Scanner object for taking further input
      */
     private static void selectContinueOption(final OptionToContinue choice, final Scanner scanner) {
-
         switch (choice) {
             case CONTINUE -> changePeople(scanner);
             case EXIT -> System.out.println("\nGood Bye!");
