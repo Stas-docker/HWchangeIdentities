@@ -1,3 +1,10 @@
+package controller;
+
+import model.OptionToContinue;
+import model.Person;
+import view.InputView;
+import view.Menu;
+
 import java.util.Scanner;
 
 /**
@@ -45,7 +52,7 @@ public class Steps {
      * @return the selected option number
      */
     private static int readContinueOption(final Scanner scanner) {
-        PersonUtils.validateIntInput(scanner);
+        InputView.validateIntInput(scanner);
         final int choice = scanner.nextInt();
         scanner.nextLine();
 
@@ -53,10 +60,10 @@ public class Steps {
     }
 
     /**
-     * Maps an integer option to its corresponding OptionToContinue enum value.
+     * Maps an integer option to its corresponding model.OptionToContinue enum value.
      *
      * @param choice the integer choice entered by the user
-     * @return the corresponding OptionToContinue enum constant
+     * @return the corresponding model.OptionToContinue enum constant
      */
     private static OptionToContinue getContinueOption(final int choice) {
         return switch (choice) {
@@ -69,7 +76,7 @@ public class Steps {
     /**
      * Executes the appropriate action based on the selected enum option.
      *
-     * @param choice  the chosen OptionToContinue state
+     * @param choice  the chosen model.OptionToContinue state
      * @param scanner the Scanner object for taking further input
      */
     private static void selectContinueOption(final OptionToContinue choice, final Scanner scanner) {

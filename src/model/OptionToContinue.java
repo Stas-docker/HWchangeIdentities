@@ -1,3 +1,5 @@
+package model;
+
 /**
  * Enum representing user menu selection states for continuing, exiting, or providing invalid input.
  */

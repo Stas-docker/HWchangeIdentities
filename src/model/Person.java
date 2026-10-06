@@ -1,3 +1,5 @@
+package model;
+
 /**
  * Represents a person entity holding basic identity details such as name and age.
  */
@@ -6,7 +8,7 @@ public class Person {
     private int age;
 
     /**
-     * Constructs a new Person with the specified name and age.
+     * Constructs a new model.Person with the specified name and age.
      *
      * @param name the person's name
      * @param age  the person's age
@@ -33,7 +35,6 @@ public class Person {
 
         this.name = name;
     }
-
 
     public int getAge() {
         return age;

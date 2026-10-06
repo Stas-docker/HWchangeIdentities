@@ -1,3 +1,5 @@
+package view;
+
 /**
  * Utility class responsible for displaying console menu messages and prompts to the user.
  */
