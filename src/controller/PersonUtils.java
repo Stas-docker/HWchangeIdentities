@@ -1,7 +1,6 @@
 package controller;
 
 import model.Person;
-import view.InputView;
 
 import java.util.Scanner;
 
@@ -39,8 +38,8 @@ public class PersonUtils {
      * @return a new model.Person instance
      */
     protected static Person createPerson(final Scanner scanner) {
-        final String name = InputView.readName(scanner);
-        final int age = InputView.readAge(scanner);
+        final String name = InputController.readName(scanner);
+        final int age = InputController.readAge(scanner);
         final Person person = new Person(name, age);
 
         return person;

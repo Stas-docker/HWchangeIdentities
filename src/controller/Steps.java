@@ -2,7 +2,6 @@ package controller;
 
 import model.OptionToContinue;
 import model.Person;
-import view.InputView;
 import view.Menu;
 
 import java.util.Scanner;
@@ -52,7 +51,7 @@ public class Steps {
      * @return the selected option number
      */
     private static int readContinueOption(final Scanner scanner) {
-        InputView.validateIntInput(scanner);
+        InputController.validateIntInput(scanner);
         final int choice = scanner.nextInt();
         scanner.nextLine();
 

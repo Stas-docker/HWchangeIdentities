@@ -1,11 +1,11 @@
-package view;
+package controller;
 
 import java.util.Scanner;
 
 /**
  * Handles console user input and basic validation.
  */
-public class InputView {
+public class InputController {
 
     /**
      * Reads a person's name from the console.

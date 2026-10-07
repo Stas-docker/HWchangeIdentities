@@ -1,11 +1,15 @@
 package model;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Represents a person entity holding basic identity details such as name and age.
  */
 public class Person {
     private String name;
     private int age;
+    private static final Pattern pattern = Pattern.compile("\\d");
 
     /**
      * Constructs a new model.Person with the specified name and age.
@@ -23,14 +27,13 @@ public class Person {
     }
 
     public void setName(String name) {
-        if (name == null || name.isEmpty()) {
+        if (name.isBlank()) {
             throw new IllegalArgumentException("Name cannot be null or empty.");
         }
 
-        for (char c : name.toCharArray()) {
-            if (Character.isDigit(c)) {
-                throw new IllegalArgumentException("Name cannot contain digits.");
-            }
+        Matcher matcher = pattern.matcher(name);
+        if (matcher.find()) {
+            throw new IllegalArgumentException("Name cannot contain digits.");
         }
 
         this.name = name;
@@ -41,8 +44,8 @@ public class Person {
     }
 
     public void setAge(int age) {
-        if (age <= 0 || age > 150) {
-            throw new IllegalArgumentException("Age must be between 1 and 150.");
+        if (age < 0 || age > 150) {
+            throw new IllegalArgumentException("Age must be between 0 and 150.");
         }
 
         this.age = age;
